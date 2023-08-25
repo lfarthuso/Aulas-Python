@@ -1,0 +1,23 @@
+print("Aplicativo de Vendas da empresa X, revendedora de bujão de gás")
+print("--"*22)
+print('')
+G = 100 #valor de cada unidade
+print("valor unitario do gas: ", G)
+print ('')
+Q = int(input('Quantidade de bujoes solicitados: ')) #quantidade de bujoes solicitados
+SD = (G*Q) #valor do total sem desconto
+print ('')
+print ("valor total do pedido sem desconto: ", SD)
+print ('')
+#quantidade e desconto
+if 0 <= Q <= 9: 
+  m1 = 1 #ate 9 unidades sem desconto
+elif 10 <= Q <= 99:
+  m1 = 0.95 #entre 10 e 99 unidades 5% de desconto
+elif 100 <= Q <= 999:
+  m1 = 0.90 #entre 100 e 999 unidades 10% de desconto
+else: 
+ m1 = 0.85 #acima de 1000 unidades 15% de desconto
+
+CD = (m1 * Q * G) #valor total com desconto = (desconto x quantidade x preco)
+print ('valor total do pedido com desconto: ', CD)

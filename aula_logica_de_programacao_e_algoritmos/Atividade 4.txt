@@ -1,0 +1,12 @@
+4º
+Enunciado: Imagina-se que você está desenvolvendo um software de contole de estoque para um bicicletaria. Esse software deve ter o seguinte menu e opções:
+
+1. cadastrar peça
+2. consultar peça
+	1- consultar todas as peças
+	2- consultar peças por código
+	3- consultar peçsa por fabricante
+	4- retornar
+3. remover peça
+4. Sair
+

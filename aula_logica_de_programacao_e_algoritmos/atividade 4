@@ -1,0 +1,90 @@
+print('Bem vindo ao estoque da bicicletaria X')
+print('--'*22,'\n')
+
+lista_peca = [] #lista principal
+cod_peca = 0    #parametro contador
+
+#exigencia 1 funcao cadastrarPeca
+def cadastrarPeca(codigo): #Cadastrar peças
+  print('Bem vindo ao menu de cadastrar peças')
+  print('Codigo da peça: {}'.format(codigo))
+  nome = input('Entre com o Nome da peça: ')
+  fabricante = input('Entre com o Fabricante da peça: ')
+  preco = int(input('Entre com o Preço(R$) da peça: '))
+  dicionarioPeca = {'codigo'     : codigo,     #cadastrar codigo (contador)
+                    'nome'       : nome,       #cadastrar nome
+                    'fabricante' : fabricante, #cadastrar fabricante
+                    'preco'      : preco}      #cadastrar preço
+  lista_peca.append(dicionarioPeca.copy()) #adiciona o 'dicionario' para a 'lista'
+
+#exigencia 2 funcao consultarPeca
+def consultarPeca(): #Consultar peças
+  print('Bem vindo ao menu de Consultar peças')
+  while True:
+    opcao_consultar = input('\n Escolha a opção desejada:\n'+
+                      '1 - Consultar TODOS as peças\n'+
+                      '2 - Consultar peça por CÓDIGO\n'+
+                      '3 - consultar peça(s) por FABRICANTE\n'+
+                      '4 - Retornar\n'+
+                      '>>')
+    if opcao_consultar == '1': #exibir todas peças
+      print('você escolheu a opção Consultar TODOS as peças')
+      for produto in lista_peca: #produto vai ler toda lista de peças
+        print('--'*10)
+        for key, value in produto.items(): #ler todos os conjuntos chave e valor do dicionario produto
+          print('{}: {}' .format(key,value))
+        print('--'*10)
+    elif opcao_consultar == '2': #exibir peças por codigo especifico
+      print('você escolheu a opção Consultar peças por CÓDIGO')
+      valor_desejado = int(input('Entre com o Código dejado: '))
+      for produto in lista_peca:
+        if produto['codigo']== valor_desejado: #codigo é igual o valor desejado
+          print('--'*10)
+          for key, value in produto.items():
+            print('{}: {}' .format(key,value))
+          print('--'*10)
+    elif opcao_consultar == '3': #exibir peças de fabricante especifico
+      print('Você escolheu a opção Consultar peça(s) por FABRICANTE')
+      valor_desejado = input('Entre com o Fabricante dejado: ')
+      for produto in lista_peca:
+        if produto['fabricante']== valor_desejado: #fabricante é igual o valor desejado
+          print('--'*10)
+          for key, value in produto.items():
+           print('{}: {}' .format(key,value))
+          print('--'*10)
+    elif opcao_consultar == '4': #opcao retornar
+      return #volta para o menu inicial
+    else:
+      print('Opção inválida. tente novamente')
+      continue
+
+#exigencia 3 funcao removerPeca
+def removerPeca(): #Remover uma peça 
+  print('Bem vindo ao menu de remover peças')
+  valor_desejado = int(input('Entre com o CÓDIGO da peça que deseja remover: '))
+  for produto in lista_peca:
+    if produto['codigo']== valor_desejado:
+      lista_peca.remove(produto)
+      print('Peça Removida')
+
+#menu inicial
+while True:
+  opcao_inicio = input('\nEscolha a opção desejada: \n'+
+                       '1 - Cadastrar Peças\n'+
+                       '2 - Consultar Peças\n'+
+                       '3 - Remover Peças\n'+
+                       '4 - Sair\n'+
+                       '>>')
+  if opcao_inicio == '1':
+    cod_peca = cod_peca + 1 #contador de codigo da peça
+    cadastrarPeca(cod_peca)
+  elif opcao_inicio == '2':
+    consultarPeca()
+  elif opcao_inicio == '3':
+    removerPeca()
+  elif opcao_inicio == '4':
+    break #pausa o laço while True (menu inicial)
+  else:
+    print('opção invalida, tente novamente')
+    continue #retorna para o while True (menu inicial)
+

@@ -1,0 +1,48 @@
+print ("Bem Vindo a Lanchonete X")
+print ("--"*22)
+
+T = 0 #valor do pedido
+Total = 0 #total a ser pago no final inicia em 0
+print( '| código |    descrição            |valor| \n'
+       '|   100  |  cachorro-quente        | 9,00| \n'
+       '|   101  |  cachorro-quente-duplo  |11,00| \n'
+       '|   102  |  x-egg                  |12,00| \n'
+       '|   103  |  x-salada               |13,00| \n'
+       '|   104  |  x-bacon                |14,00| \n'
+       '|   200  |  refrigerante lata      | 5,00| \n'
+       '|   201  |  Chá gelado             | 4,00| \n'
+                 '\n')
+while True:
+  pedido = int(input(
+                 'qual o código desejado: '))
+  if pedido == 100:
+    print('você pediu um cachorro-quente no valor de 9,00')
+    Total = Total + 9 #atualização do valor total
+  elif pedido == 101:
+    print('você pediu um cachorro-quente-duplo no valor de 11,00')
+    Total = Total + 11
+  elif pedido == 102 :
+    print('você pediu um x-egg no valor de 12,00')
+    Total = Total + 12
+  elif pedido == 103 :
+     print('você pediu um x-salada no valor de 13,00')
+     Total = Total + 13
+  elif pedido == 104 :
+     print('você pediu um x-bacon no valor de 14,00')
+     Total = Total + 14
+  elif pedido == 200 :
+     print('você pediu um refrigerante lata no valor de 5,00')
+     Total = Total + 5
+  elif pedido == 201 :
+    print('você pediu um chá galado no valor de 4,00')
+    Total = Total + 4
+  else: print('opção inválida') #código errado
+  Continuar=input('\n deseja pedir mais alguma coisa?\n'
+  '1 - sim\n'
+  '0 - não\n') #qualquer valor diferente de 1 pausa a repetição
+  if Continuar.upper() == '1':
+    print('')
+    continue #retorna ao while true, adiciona novos pedidos
+  else:
+    print('\n O total a ser pago é: R$', Total)
+    break #para de repetir

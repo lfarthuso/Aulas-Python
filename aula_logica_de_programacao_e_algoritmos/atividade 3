@@ -1,0 +1,90 @@
+print('Bem vindo a companhia de logistica X')
+print('--'*22,'\n')
+
+#Dimenções do objeto
+print('por favor entre com as dimensoes do objeto.')
+while True:
+    try:
+      comprimento=float(input('digite o comprimento do objeto (em cm): '))
+      largura=float(input('digite a largura do objeto (em cm): '))
+      altura=float(input('digite a altura do objeto (em cm): '))
+    except ValueError: #apresentar erro caso não seja um numero
+        print('você digitou alguma dimensão do objeto com valor não numérico')
+        print('por favor entre com as dimensoes novamente')
+        continue
+    dimensoesObjeto=comprimento*largura*altura #volume do objeto
+    if 1<= dimensoesObjeto <1000:
+     dimensoes = 10 #valor a pagar pelo volume
+     break
+    elif 1000 <= dimensoesObjeto <10000:
+      dimensoes = 20
+      break
+    elif 10000 <= dimensoesObjeto <30000:
+      dimensoes = 30
+      break
+    elif 30000 <=dimensoesObjeto< 100000:
+      dimensoes = 50
+      break
+    else:
+      print('o volume do objeto é (em cm³):', dimensoesObjeto)
+      print('não aceitamos objetos com dimensões tão grandes')
+      print('por favor entre com as dimensoes novamente')
+      continue
+print('o volume do objeto é (em cm³): ', dimensoesObjeto)    
+
+#Peso do objeto
+while True:
+    try:
+      kilos=float(input('digite o peso do objeto (em kg): '))
+    except ValueError: #apresentar erro caso não seja um numero
+        print('você digitou o peso do objeto com valor não numérico')
+        print('entre com o peso do objeto novamente')
+        continue
+    if 0 == kilos <= 0.1:
+     peso = 1 #multiplicador de peso
+     break
+    elif 0.1 < kilos < 1:
+      peso = 1.5
+      break
+    elif 1 <= kilos < 10:
+      peso = 2
+      break
+    elif 10 <= kilos < 30:
+      peso = 3
+      break
+    else:
+      print ('não aceitamos objetos tão pesados')
+      print('entre com o peso do objeto novamente')
+      continue
+
+#Rota do objeto
+while True:
+    destino = input('selecione a rota: \n'
+    'BR - De Brasilia para Rio de Janeiro\n'
+    'BS - De Brasilia para São Paulo\n'
+    'RB - De Rio de Janeiro para Brasilia\n'
+    'RS - De Rio de Janeiro para São Paulo\n'
+    'SR - De São Paulo para Rio de Janeiro\n'
+    'SB - De São Paulo para Brasilia\n')
+    if destino == 'BR' or destino == 'br': #selecao de rota com escrita 'BR' ou 'br'
+     rota = 1.50 #multiplicador para a rota
+     break
+    elif destino == 'BS' or destino == 'bs':
+      rota = 1.20
+      break
+    elif destino == 'RB' or destino == 'rb':
+      rota = 1.50
+      break
+    elif destino == 'RS' or destino == 'rs':
+      rota = 1.00
+      break
+    elif destino == 'SR' or destino == 'sr':
+      rota = 1.00
+      break
+    elif destino == 'SB' or destino == 'sb':
+      rota = 1.20
+      break
+    else: #apresentar erro se não usar o codigo de rota correto
+      print ('destino inválido')
+      continue
+print('total a pagar(R$)', (dimensoes*peso*rota), '  (dimensões:',dimensoes,'* peso:',peso,'* rota:',rota,')')

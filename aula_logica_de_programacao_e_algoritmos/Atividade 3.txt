@@ -1,0 +1,38 @@
+3º
+Enunciado: Imagina-se que você e sua equipe foram contratados por uma empresa de logística que acabou de entrar no ramo. Essa empresa trabalho com encomendas de pequeno e médio porte e opera somente entre 3 cidades.
+
+O valor que a empresa cobra por objeto é dada pela seguinte equação:
+	Total = dimensões * peso * rota
+
+Em que cada uma das variáveis que compõe o preço total é quantizada da seguinte maneira:
+
+Dimensão vesus Valor:
+dimensões (cm³)			valor (R$)
+volume < 1.000			10
+1.000 <= volume < 10.000	20
+10.000 <= volume < 30.000	30
+30.000 <= volume < 100.000	50
+volume >= 100.000		não é aceito
+
+Peso vesus Multiplicador:
+Peso (kg)			Multiplicador
+peso <= 0.1			1
+0.1 < peso < 1			1.5
+1 <= peso < 10			2
+10 <= peso < 30			3
+peso >= 30			não é aceito
+
+Rota versus Multiplicador
+Rota				Multiplicador
+RS - Rio até SP			1
+SR - SP até Rio			1
+BS - Brasília até SP		1.2
+SB - SP até Brasília		1.2
+BR - Brasília até Rio		1.5
+RB - Rio até Brasília		1.5
+
+Elabore um programa em Python que:
+	1. Pergunte a altura (em cm), comprimento (em cm) e largura (em cm) do objeto. Se digitar um valor não numérico e/ou as dimensões passarem do limite, repetir a pergunta;
+	2. Pergunte o peso do objeto (em kg). Se digitar um valor não numérico e/ou o peso passar do limite, repetir a pergunta;
+	3. Pergunte a rota do objeto. Se digitar uma opção que não esteja na tabela, repetir a pergunta;
+	4. Encerre o total a ser pago com base na equação desse enunciado;

@@ -1,0 +1,15 @@
+1º 
+Enunciado: Imagina-se que você é um dos programadores responsáveis pela construção de app de vendas para uma determinada empresa X que vende em atacado. Uma das estratégias de vendas dessa empresa x é dar desconto maiores por unidades conforme:
+
+Quantidades :                   Desconto:
+Até 9				0% na unidade
+entre 10 e 99			5% na unidade
+entre 100 e 999			10% na unidade
+de 1000 para mais		15% na unidade
+
+Elabora um programa python que:
+	1. entre com valor unitário do produto;
+	2. entre com a quantidade desse produto;
+	3. o programa deve retornar o valor total sem desconto;
+	4. o programa deve retornar o valor total após desconto;
+	5. deve-se utilizar estruturas if, elif e else;
